@@ -83,7 +83,8 @@ Sample response (trimmed):
 4. In the Railway dashboard, add environment variables:
    - `GOOGLE_API_KEY=<your Google AI Studio key>`
    - Optional tuning vars (`GEMINI_MODEL`, `TEMPERATURE`, etc.)
-5. Deploy. Railway assigns a public URL like `https://support-copilot.up.railway.app`.
+5. Deploy. Railway assigns a public URL like `https://support-copilot.up.railway.app`. If Railway
+   asks for a start command, use `uvicorn app:app --host 0.0.0.0 --port $PORT`.
 6. Test the deployment:
    ```bash
    curl https://support-copilot.up.railway.app/health
