@@ -78,8 +78,8 @@ Sample response (trimmed):
 
 1. Push this folder to its own Git repository (or use an existing one).
 2. Create a new project in [Railway](https://railway.app/) and connect the repo.
-3. Railway’s Python Nixpack will detect `requirements.txt` automatically. The provided `Procfile`
-   runs `uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}` so no extra configuration is needed.
+3. Railway will detect the provided `Dockerfile` automatically and build it. No extra configuration
+   is required.
 4. In the Railway dashboard, add environment variables:
    - `GOOGLE_API_KEY=<your Google AI Studio key>`
    - Optional tuning vars (`GEMINI_MODEL`, `TEMPERATURE`, etc.)
@@ -91,6 +91,3 @@ Sample response (trimmed):
      -H "Content-Type: application/json" \
      -d '{"ticket_id":"demo","messages":[{"role":"customer","text":"Need a refund"}]}'
    ```
-
-> Tip: if you prefer Terraform-style configuration, Railway supports `railway.json` – the provided
-> `Procfile` already sets the correct start command.
